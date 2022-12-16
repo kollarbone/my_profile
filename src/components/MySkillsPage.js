@@ -1,5 +1,6 @@
 import React from "react";
 
-export const MySkillsPage = () => {
+const MySkillsPage = () => {
   return <div>hi, skills</div>;
 };
+export default MySkillsPage;

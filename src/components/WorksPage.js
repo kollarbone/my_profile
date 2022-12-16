@@ -1,5 +1,6 @@
 import React from "react";
 
-export const WorksPage = () => {
+const WorksPage = () => {
   return <div>hi, work</div>;
 };
+export default WorksPage;
