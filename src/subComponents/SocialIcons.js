@@ -86,6 +86,7 @@ const SocialIcons = (props) => {
         >
           <Youtube
             fill={props.theme === "dark" ? DarkTheme.text : DarkTheme.body}
+            subfill={props.theme === "dark" ? DarkTheme.body : DarkTheme.text}
           />
         </a>
       </motion.div>

@@ -7,6 +7,7 @@ import Main from "./components/Main";
 import AboutPage from "./components/AboutPage";
 import WorksPage from "./components/WorksPage";
 import MySkillsPage from "./components/MySkillsPage";
+import { AnimatePresence } from "framer-motion";
 
 export default function App() {
   const location = useLocation();
@@ -14,13 +15,15 @@ export default function App() {
     <>
       <GlobalStyle />
       <ThemeProvider theme={lightTheme}>
-        <Routes location={location} key={location.pathname}>
-          <Route path="/" element={<Main />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/work" element={<WorksPage />} />
-          <Route path="/skills" element={<MySkillsPage />} />
-          <Route path="*" element={<Main />} />
-        </Routes>
+        <AnimatePresence mode="wait">
+          <Routes location={location} key={location.pathname}>
+            <Route path="/" element={<Main />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/work" element={<WorksPage />} />
+            <Route path="/skills" element={<MySkillsPage />} />
+            <Route path="*" element={<Main />} />
+          </Routes>
+        </AnimatePresence>
       </ThemeProvider>
     </>
   );
