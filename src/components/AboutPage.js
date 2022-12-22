@@ -58,14 +58,13 @@ const AboutPage = () => {
   return (
     <ThemeProvider theme={DarkTheme}>
       <Box
-      // initial={{ height: 0 }}
-      // animate={{ height: "100vh" }}
-      // transition={{ type: "spring", duration: 2, delay: 1 }}
+        initial={{ height: 0 }}
+        animate={{ height: window.innerHeight, transition: { duration: 1 } }}
+        exit={{ y: window.innerHeight, transition: { duration: 1 } }}
       >
         <LogoComponent theme="dark" />
         <SocialIcons theme="dark" />
         <PowerButton />
-
         <ParticleComponent theme="dark" />
         <Spaceman>
           <img src={astronaut} alt="spaceman" />

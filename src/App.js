@@ -11,11 +11,12 @@ import { AnimatePresence } from "framer-motion";
 
 export default function App() {
   const location = useLocation();
+  console.log(location.pathname);
   return (
     <>
       <GlobalStyle />
       <ThemeProvider theme={lightTheme}>
-        <AnimatePresence exitBeforeEnter initial={false}>
+        <AnimatePresence>
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<Main />} />
             <Route path="/about" element={<AboutPage />} />

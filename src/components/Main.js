@@ -23,7 +23,7 @@ const MainContainer = styled.div`
     font-weight: 500;
   }
 `;
-const Container = styled.div`
+const Container = styled(motion.div)`
   padding: 2rem;
 `;
 const WORK = styled(NavLink)`
@@ -104,7 +104,14 @@ const Main = () => {
   return (
     <MainContainer>
       <DarkDiv click={click} />
-      <Container>
+      <Container
+        initial={{ height: 0 }}
+        animate={{ height: window.innerHeight, transition: { duration: 1 } }}
+        exit={{
+          y: -window.innerHeight,
+          transition: { duration: 1 }
+        }}
+      >
         <PowerButton />
         <LogoComponent theme={click ? "dark" : "light"} />
         <SocialIcons />

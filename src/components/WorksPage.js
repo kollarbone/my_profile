@@ -10,12 +10,13 @@ import Card from "../subComponents/Card";
 import Electro from "../assets/svg/electro";
 import BigTitlte from "../subComponents/BigTitlte";
 
-const Box = styled.div`
+const Box = styled(motion.ul)`
   background-color: #53377a;
   height: 400vh;
   position: relative;
   display: flex;
   align-items: center;
+  transform: translate(0%, 0%);
 `;
 
 const Main = styled(motion.ul)`
@@ -66,7 +67,11 @@ const WorksPage = () => {
 
   return (
     <ThemeProvider theme={DarkTheme}>
-      <Box>
+      <Box
+        initial={{ height: 0 }}
+        animate={{ height: window.innerHeight, transition: { duration: 1 } }}
+        exit={{ y: window.innerHeight, transition: { duration: 1 } }}
+      >
         <LogoComponent theme="dark" />
         <SocialIconsLeft theme="dark" />
         <PowerButton />

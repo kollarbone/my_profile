@@ -78,7 +78,11 @@ const Description = styled.div`
 const MySkillsPage = (props) => {
   return (
     <ThemeProvider theme={lightTheme}>
-      <Box>
+      <Box
+        initial={{ height: 0 }}
+        animate={{ height: window.innerHeight, transition: { duration: 1 } }}
+        exit={{ y: window.innerHeight, transition: { duration: 1 } }}
+      >
         <LogoComponent theme="light" />
         <SocialIcons theme="light" />
         <PowerButton />
