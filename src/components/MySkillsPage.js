@@ -8,8 +8,9 @@ import Design from "../assets/svg/design";
 import Develop from "../assets/svg/divelop";
 import ParticleComponent from "../subComponents/ParticleComponent";
 import BigTitle from "../subComponents/BigTitlte";
+import { motion } from "framer-motion";
 
-const Box = styled.div`
+const Box = styled(motion.div)`
   background-color: ${(props) => props.theme.body};
   width: 100vw;
   height: 100vh;
@@ -18,6 +19,7 @@ const Box = styled.div`
   justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
+  transform: translate(0%, 0%);
 `;
 
 const Main = styled.div`

@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { keyframes, ThemeProvider } from "styled-components";
 import { DarkTheme } from "./Themes";
-
+import { motion } from "framer-motion";
 import LogoComponent from "../subComponents/LogoComponent";
 import SocialIcons from "../subComponents/SocialIcons";
 import PowerButton from "../subComponents/HomeButton";
@@ -9,12 +9,13 @@ import ParticleComponent from "../subComponents/ParticleComponent";
 import BigTitle from "../subComponents/BigTitlte";
 import astronaut from "../assets/Images/Saly-26.png";
 
-const Box = styled.div`
+const Box = styled(motion.div)`
   background-color: #53377a;
   width: 100vw;
   height: 100vh;
   position: relative;
   overflow: hidden;
+  transform: translate(0%, 0%);
 `;
 const float = keyframes`
 0% { transform: translateY(-10px) }
@@ -56,10 +57,15 @@ const Main = styled.div`
 const AboutPage = () => {
   return (
     <ThemeProvider theme={DarkTheme}>
-      <Box>
+      <Box
+      // initial={{ height: 0 }}
+      // animate={{ height: "100vh" }}
+      // transition={{ type: "spring", duration: 2, delay: 1 }}
+      >
         <LogoComponent theme="dark" />
         <SocialIcons theme="dark" />
         <PowerButton />
+
         <ParticleComponent theme="dark" />
         <Spaceman>
           <img src={astronaut} alt="spaceman" />

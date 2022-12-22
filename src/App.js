@@ -15,7 +15,7 @@ export default function App() {
     <>
       <GlobalStyle />
       <ThemeProvider theme={lightTheme}>
-        <AnimatePresence mode="wait">
+        <AnimatePresence exitBeforeEnter initial={false}>
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<Main />} />
             <Route path="/about" element={<AboutPage />} />

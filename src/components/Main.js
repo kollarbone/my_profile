@@ -113,7 +113,7 @@ const Main = () => {
             onClick={() => handleClick()}
             width={click ? 100 : 150}
             height={click ? 100 : 150}
-            fill="currentColor"
+            fill="#53377A"
           />
           <span>click here</span>
         </Center>
