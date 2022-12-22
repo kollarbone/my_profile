@@ -100,17 +100,29 @@ const DarkDiv = styled.div`
 const Main = () => {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
-
+  let nav = NavLink.to;
+  console.log(nav);
   return (
     <MainContainer>
       <DarkDiv click={click} />
       <Container
-        initial={{ height: 0 }}
-        animate={{ height: window.innerHeight, transition: { duration: 1 } }}
-        exit={{
-          y: -window.innerHeight,
-          transition: { duration: 1 }
-        }}
+        initial={nav === "/work" ? { width: 0 } : { height: 0 }}
+        animate={
+          nav === "/work"
+            ? { width: window.innerWidth, transition: { duration: 1 } }
+            : { height: window.innerHeight, transition: { duration: 1 } }
+        }
+        exit={
+          nav === "/work"
+            ? {
+                x: -window.innerWidth,
+                transition: { duration: 1 }
+              }
+            : {
+                y: -window.innerHeight,
+                transition: { duration: 1 }
+              }
+        }
       >
         <PowerButton />
         <LogoComponent theme={click ? "dark" : "light"} />

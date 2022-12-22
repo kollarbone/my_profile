@@ -22,7 +22,7 @@ const Box = styled(motion.ul)`
 const Main = styled(motion.ul)`
   position: fixed;
   top: 12rem;
-  left: calc(1rem + 10vw);
+  left: calc(1rem + 5vw);
   height: 40vh;
   display: flex;
   color: white;
@@ -68,9 +68,9 @@ const WorksPage = () => {
   return (
     <ThemeProvider theme={DarkTheme}>
       <Box
-        initial={{ height: 0 }}
-        animate={{ height: window.innerHeight, transition: { duration: 1 } }}
-        exit={{ y: window.innerHeight, transition: { duration: 1 } }}
+        initial={{ width: 0 }}
+        animate={{ width: window.innerWidth, transition: { duration: 1 } }}
+        exit={{ x: window.innerWidth, transition: { duration: 1 } }}
       >
         <LogoComponent theme="dark" />
         <SocialIconsLeft theme="dark" />
