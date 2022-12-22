@@ -16,7 +16,6 @@ const Box = styled(motion.ul)`
   position: relative;
   display: flex;
   align-items: center;
-  transform: translate(0%, 0%);
 `;
 
 const Main = styled(motion.ul)`
