@@ -11,7 +11,7 @@ import { AnimatePresence } from "framer-motion";
 
 export default function App() {
   const location = useLocation();
-  console.log(location.pathname);
+
   return (
     <>
       <GlobalStyle />
