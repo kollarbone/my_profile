@@ -51,5 +51,14 @@ export const Work = [
 
     demo: "https://ble8lt.csb.app/",
     github: "https://github.com/kollarbone/react_app_popup"
+  },
+  {
+    id: 5,
+    name: "Art gallery",
+    description: "Small gallery of different arts with filters",
+    tags: ["react", "styledComponents", "api", "axios", "framer-motion"],
+
+    demo: "https://ngkkjc.csb.app/",
+    github: "https://github.com/kollarbone/gallery"
   }
 ];
